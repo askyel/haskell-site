@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+	<table id="heading">
+		<tr>
+			<td><h3>Ariel Levy and Yicheng Wang</h3></td>
+			<td><h3>Software Development, Brown-Mykolyk, Period 6</h3></td>
+			<td><h3>Stuyvesant High School, 2016</h3></td>
+		</tr>
+	</table>
+
+	<img src="haskell_logo.png">
+
+	<h1>Haskell</h1>
+
+	<table id="quals">
+		<tr><th>Advanced</th><td>It's not byte code.</td></tr>
+		<tr><th>Declarative</th><td>Specifies what to do, not how to do it.</td></tr>
+		<tr><th>Statically Typed</th><td>Expression types are determined at compile time.</td></tr>
+		<tr><th>Purely Functional</th><td>There are only functions, no variables!</td></tr>
+	</table>
+	
+	<!--<ul>
+		<li><b>Advanced</b> - It's not byte code.</li>
+		<li><b>Declarative</b> - Specifies what to do, not how to do it.</li>
+		<li><b>Statically Typed</b> - Expression types are determined at compile time.</li>
+		<li><b>Purely Functional</b> - There are only functions, no variables!</li>
+	</ul>-->
+	
+	<h2>Functional Programming</h2>
+	
+	<p>Haskell functions are pure mathematical expressions. Their output is solely determined by input values. Calling a function with the same inputs will <i>always</i> produce the same output.</p>
+	
+	<p>Functions cannot mutate variables, global or local. There are no states in Haskell, meaning no access to time or random numbers.</p>
+		
+	<p>Without any variables, values can only be bound to a <i>constant</i> name.</p>
+	
+	<p>Functional code tends to be both more <i>legible</i> and more <i>efficient</i> due to code optimization.</p>
+	
+	<pre><code>
+(define (listSum L) (if (= null (cdr L)) 0 (+ (car L) (listSum (cdr L)))))
+	</code></pre>
+	
+	<pre><code>
+listSum :: [Int] -> Int
+listSum [x] = x
+listSum (x:xs) = x + listSum xs
+	</code></pre>
+	
+	<h2>Haskell Features</h2>
+	
+	<p>Lists are homogeneous and singly linked. But lists can also have parallel structure. For example, the function <code>zip</code> takes two lists and joins them into a list of tuples.</p>
+
+	<pre><code>
+zip ["Jeter", "Ruth"] [2, 3] >>> [("Jeter", 2), ("Ruth", 3)]
+	</code></pre>
+	
+	<p>Since lists are singly linked, they can be divided into a <code>head</code> (the first element) and <code>tail</code> (everything else).</p>
+
+	<pre><code>
+head ["Ned", "Sansa", "Arya"] >>> "Ned"
+tail ["Ned", "Sansa", "Arya"] >>> ["Sansa", "Arya"]
+	</code></pre>
+
+	<p>Lists can be composed with the composition operator (<code>:</code>) or concatenation operator (<code>++</code>).</p>
+
+	<pre><code>
+0 : [1, 2, 3, 4, 5] >>> [0, 1, 2, 3, 4, 5]
+[1, 2, 3] ++ [4, 5, 6] >>> [1, 2, 3, 4, 5, 6]
+	</code></pre>
+
+	<p>Haskell can also build lists based on set builder notation!</p>
+
+	<pre><code>
+[a + b | (a, b) <- [(1, 2), (3, 4), (5, 6)]] >>> [3, 7, 11]
+	</code></pre>
+
+	<p>Higher-order functions take other functions as parameters. Commonly used examples include <code>map</code>, <code>filter</code>, and <code>zipWith</code>.</p>
+
+	<pre><code>
+map head ["For", "The", "Win"] >>> ['F', 'T', 'W']
+filter (> 64) [87, 54, 61, 79, 91, 59] >>> [87, 79, 91]
+zipWith (*) [1, 2, 3, 4] [8, 7, 6, 5] >>> [8, 14, 18, 20]
+	</code></pre>
+
+	<h2>Benefits of Haskell</h2>
+
+	<p>Haskell data and functions can be described as abstract concepts.</p>
+
+	<p>The Haskell compiler and garbarge collector are very smart and high-performance.</p>
+
+	<p>Haskell is lazy! It operates on call-by-need, so expressions are only evaluated when their value is needed, not when they are bound to names.</p>
+
+	<p>It is as concise as Python, but runs so much faster! Even so, Haskell has not replaced Python. And that's not because it is "too abstract", "the syntax is weird", or "lazy evaluation unstable". It is simply that there aren't enough Haskell libraries.</p>
+
+	<p>Help us make the Haskell community welcoming to business and programming, with good libraries for advanced mathematics, advanced parsing, etc.</p>
+
+	<h2 id="hail">JOIN THE GOOD FIGHT. HAIL HASKELL.</h2>
+
+	<h3>Check out <a href="https://www.haskell.org/">www.haskell.org</a> for more information on Haskell.</h3>
+
+	<h3>Thanks to <a href="http://bettermotherfuckingwebsite.com/">this website</a> (NSFW) for design inspiration</h3>
+</body>
